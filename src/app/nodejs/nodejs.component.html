@@ -1,0 +1,77 @@
+<div class="container-fluid">
+  <div class="row">
+    
+
+      <div class="col">
+          <div class="container">
+            <h3>Create / Update Key:</h3>
+            <form (ngSubmit)="updateValue(uKey.value,uValue.value)">
+              <label for="key">Key</label>
+              <input type="text" id="key" name="key" placeholder="Your Redis key.." #uKey>
+              <label for="value">Value</label>
+              <input type="text" id="value" name="value" placeholder="Your Redis value.." #uValue>
+              <input type="submit" value="Submit"><br><br>
+              <label for="response">Response</label>
+              <input type="text" id="response" name="response" placeholder="Your Redis value.." disabled [(ngModel)]="updateResponse">
+            </form>
+          </div>
+        </div>
+      
+    
+
+
+
+
+    <div class="col">
+      <div class="container">
+        <h3>Search Key:</h3>
+        <form (ngSubmit)="searchValue(sKey.value)">
+          <label for="key">Key</label>
+          <input type="text" id="key" name="key" placeholder="Your Redis key.." #sKey>
+          <input type="submit" value="Submit"><br><br>
+          <label for="value">Value</label>
+          <input type="text" id="value" name="value" placeholder="Your Redis value.." disabled [(ngModel)]="keyValue">
+        </form>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <div class="col">
+        <div class="container">
+          <h3>Delete Key:</h3>
+          <form (ngSubmit)="removeKey(searchKey.value)">
+            <label for="key">Key</label>
+            <input type="text" id="key" name="key" placeholder="Your Redis key.." #searchKey>
+            <input type="submit" value="Submit"><br><br>
+            <label for="response">Response</label>
+            <input type="text" id="response" name="response" placeholder="Redis response.." disabled [(ngModel)]="deletedResponse">
+          </form>
+        </div>
+      </div>
+    <br>
+
+
+
+    <div class="col">
+      <div class="container">
+        <h3>List All Key:</h3>
+        <form (ngSubmit)="getKeys(pattern.value)">
+          <label for="fname">Key Pattern</label>
+          <input type="text" id="key" name="key" placeholder="Your Redis key.." #pattern >
+          <input type="submit" value="Submit">
+        </form>
+        <div><br>Matched Keys:<br>
+          <ul>
+            <li *ngFor="let akey of allKeys">
+              {{ akey }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

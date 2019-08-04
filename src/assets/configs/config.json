@@ -1,0 +1,4 @@
+{
+    "nodejsURL" : "/api/nodejs",
+    "springbootURL" : "/api/springboot"
+}
