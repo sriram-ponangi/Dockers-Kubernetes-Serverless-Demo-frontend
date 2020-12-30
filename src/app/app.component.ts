@@ -7,6 +7,5 @@ import { ConfigService } from './services/config.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private configService: ConfigService) {
-  }
+  constructor(private configService: ConfigService) {}
 }

@@ -13,7 +13,7 @@ export class NodejsService {
 
   constructor(private http: HttpClient, private configs: ConfigService) {
     NodejsService.apiURL = configs.nodejsURL();
-    console.log('YOYOYOYOYOYOYO', NodejsService.apiURL);
+    console.log('NodejsService Constructor (NodejsService.apiURL): ', NodejsService.apiURL);
   }
 
   getKeys(value: string): Observable<any> {
@@ -58,7 +58,7 @@ export class NodejsService {
 
 
   // Error handling
-  handleError(error) {
+  handleError(error: any) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       // Get client-side error

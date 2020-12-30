@@ -10,11 +10,11 @@ export class NodejsComponent implements OnInit {
 
   allKeys = [];
   keyValue = '';
-  updateResponse;
-  deletedResponse;
+  updateResponse: any;
+  deletedResponse: any;
   constructor(private service: NodejsService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
   getKeys(pattern: string) {

@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ConfigService {
 
-  private static configs;
+  private static configs: any;
 
   constructor(private http: HttpClient) { }
 
@@ -23,4 +23,5 @@ export class ConfigService {
     promise.then(configData => ConfigService.configs = configData);
     return promise;
   }
+
 }

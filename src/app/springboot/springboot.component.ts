@@ -9,10 +9,10 @@ import { SpringbootService } from '../services/springboot.service';
 export class SpringbootComponent implements OnInit {
 
   info: any;
+
   constructor(private service: SpringbootService) {
     this.getQuote();
   }
-
 
   ngOnInit() {
   }

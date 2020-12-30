@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SpringbootComponent } from './springboot.component';
 
@@ -6,12 +6,12 @@ describe('SpringbootComponent', () => {
   let component: SpringbootComponent;
   let fixture: ComponentFixture<SpringbootComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [ SpringbootComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SpringbootComponent);
