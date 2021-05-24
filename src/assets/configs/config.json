@@ -1,4 +1,4 @@
 {
-    "nodejsURL" : "http://localhost:3000",
+    "nodejsURL" : "/api/nodejs",
     "springbootURL" : "/api/springboot"
 }
