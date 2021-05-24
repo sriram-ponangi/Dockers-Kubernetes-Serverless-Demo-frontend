@@ -22,7 +22,7 @@ export class NodejsService {
       headers: { 'Content-Type': 'application/json' },
       params: { pattern : value}
     };
-    return this.http.get(NodejsService.apiURL + '/all' , httpOptions)
+    return this.http.get(NodejsService.apiURL + '/data/all' , httpOptions)
                .pipe(retry(1), catchError(this.handleError));
   }
 
@@ -32,17 +32,17 @@ export class NodejsService {
       headers: { 'Content-Type': 'application/json' },
       params: { key : inputKey}
     };
-    return this.http.get(NodejsService.apiURL + '/get' , httpOptions)
+    return this.http.get(NodejsService.apiURL + '/data' , httpOptions)
                .pipe(retry(1), catchError(this.handleError));
   }
 
   updateValue(inputKey: string, inputValue: string): Observable<any> {
     console.log('In updateValue() ');
     const httpOptions = {
-      headers: { 'Content-Type': 'application/json' },
-      params: { key : inputKey, value : inputValue}
+      headers: { 'Content-Type': 'application/json' }
     };
-    return this.http.get(NodejsService.apiURL + '/set' , httpOptions)
+    const body = { key : inputKey, value : inputValue}
+    return this.http.post(NodejsService.apiURL + '/data' ,body, httpOptions)
                .pipe(retry(1), catchError(this.handleError));
   }
 
@@ -50,9 +50,10 @@ export class NodejsService {
     console.log('In getValue() ');
     const httpOptions = {
       headers: { 'Content-Type': 'application/json' },
-      params: { key : inputKey}
+      body: { key : inputKey}
     };
-    return this.http.get(NodejsService.apiURL + '/delete' , httpOptions)
+    const body = { key : inputKey}
+    return this.http.delete(NodejsService.apiURL + '/data' , httpOptions)
                .pipe(retry(1), catchError(this.handleError));
   }
 

@@ -6,13 +6,13 @@
             <div class="container">
               <h3>Create / Update Key:</h3>
               <form (ngSubmit)="updateValue(uKey.value,uValue.value)">
-                <label for="key">Key</label>
-                <input type="text" id="key" name="key" placeholder="Your Redis key.." #uKey>
-                <label for="value">Value</label>
-                <input type="text" id="value" name="value" placeholder="Your Redis value.." #uValue>
+                <label for="key">Key*</label>
+                <input type="text" id="key" name="key" required placeholder="Your key.." #uKey >
+                <label for="value">Value*</label>
+                <input type="text" id="value" name="value" required placeholder="Your value.." #uValue >
                 <input type="submit" value="Submit"><br><br>
                 <label for="response">Response</label>
-                <input type="text" id="response" name="response" placeholder="Your Redis value.." disabled [(ngModel)]="updateResponse">
+                <input type="text" id="response" name="response" placeholder="Your value.." disabled [(ngModel)]="updateResponse">
               </form>
             </div>
           </div>
@@ -27,10 +27,10 @@
           <h3>Search Key:</h3>
           <form (ngSubmit)="searchValue(sKey.value)">
             <label for="key">Key</label>
-            <input type="text" id="key" name="key" placeholder="Your Redis key.." #sKey>
+            <input type="text" id="key" name="key" placeholder="Your key.." #sKey>
             <input type="submit" value="Submit"><br><br>
             <label for="value">Value</label>
-            <input type="text" id="value" name="value" placeholder="Your Redis value.." disabled [(ngModel)]="keyValue">
+            <input type="text" id="value" name="value" placeholder="Your value.." disabled [(ngModel)]="keyValue">
           </form>
         </div>
       </div>
@@ -43,10 +43,10 @@
             <h3>Delete Key:</h3>
             <form (ngSubmit)="removeKey(searchKey.value)">
               <label for="key">Key</label>
-              <input type="text" id="key" name="key" placeholder="Your Redis key.." #searchKey>
+              <input type="text" id="key" name="key" placeholder="Your key.." #searchKey>
               <input type="submit" value="Submit"><br><br>
               <label for="response">Response</label>
-              <input type="text" id="response" name="response" placeholder="Redis response.." disabled [(ngModel)]="deletedResponse">
+              <input type="text" id="response" name="response" placeholder=" response.." disabled [(ngModel)]="deletedResponse">
             </form>
           </div>
         </div>
@@ -59,7 +59,7 @@
           <h3>List All Key:</h3>
           <form (ngSubmit)="getKeys(pattern.value)">
             <label for="fname">Key Pattern</label>
-            <input type="text" id="key" name="key" placeholder="Your Redis key.." #pattern >
+            <input type="text" id="key" name="key" placeholder="Your key.." #pattern >
             <input type="submit" value="Submit">
           </form>
           <div><br>Matched Keys:<br>
