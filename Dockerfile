@@ -27,7 +27,7 @@ WORKDIR /usr/share/nginx/
 
 RUN rm -rf html/*
 
-COPY ./dist/angular-app /usr/share/nginx/html
+# COPY ./dist/angular-app /usr/share/nginx/html
 
 ## Copy the saved artifacts in dist directory From ‘builder’ stage to the default nginx public folder
 COPY --from=builder /demo-app/dist /usr/share/nginx/html
